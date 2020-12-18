@@ -14,7 +14,7 @@ I plan to deploy this project sooner once I implement a few other sorting algori
 - CSS
 - Bootstrap
 - Javascript
-- ES6 (Promises/ Async Await)
+- ES6 (Promises/Async Await)
 
 ## Features
 - Sorting Algorithms selection
