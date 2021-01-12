@@ -1,5 +1,6 @@
 import { wait } from './controller.js'
 import { rearrange_blocks } from './block_functions.js'
+import { partition, build_max_heap, max_heapify } from './sortSubFuncs.js'
 
 async function bubbleSort(blocks) {
 
@@ -104,13 +105,13 @@ async function insertionSort(blocks) {
         await wait(200)
 
         while (back > -1) {
-            
+
             blocks[back].selected = true
             rearrange_blocks(blocks)
             await wait(200)
 
             if (blocks[back].pos_no > blocks[count].pos_no) {
-                
+
                 blocks[back].selected = false
                 rearrange_blocks(blocks)
                 await wait(200)
@@ -118,8 +119,8 @@ async function insertionSort(blocks) {
                 shift++
                 back--
             }
-            else{
-                blocks[back].selected = false 
+            else {
+                blocks[back].selected = false
                 break
             }
         }
@@ -127,7 +128,7 @@ async function insertionSort(blocks) {
 
         let val = blocks[count]
         let start = blocks.slice(0, count - shift)
-        val.selected = true 
+        val.selected = true
 
         rearrange_blocks(blocks)
         await wait(200)
@@ -139,7 +140,7 @@ async function insertionSort(blocks) {
         rearrange_blocks(blocks)
         await wait(200)
 
-        val.selected = false 
+        val.selected = false
         count++
 
     }
@@ -149,4 +150,52 @@ async function insertionSort(blocks) {
 }
 
 
-export { bubbleSort, selectionSort, insertionSort }
+async function quickSort(blocks, low, high) {
+    if (low < high) {
+        partition(blocks, low, high).then(res => {
+            let loc = res
+            quickSort(blocks, low, loc - 1)
+            quickSort(blocks, loc + 1, high)
+        })
+    }
+}
+
+async function quickSortFunc(blocks, low, high) {
+    await quickSort(blocks, low, high)
+    console.log("Inside quiksort !")
+}
+
+
+async function heapSort(arr) {
+    await build_max_heap(arr)
+    var heap_size = arr.length - 1 
+
+    for(let i= arr.length - 1; i > -1; i--){
+        
+        arr[i].selected = true
+        arr[0].selected = true
+        rearrange_blocks(arr)
+        await wait(200)
+        
+        let temp = arr[i].pos_no
+        arr[i].pos_no = arr[0].pos_no
+        arr[0].pos_no = temp
+        rearrange_blocks(arr)
+        await wait(200)
+
+        arr[i].selected = false
+        arr[0].selected = false
+        rearrange_blocks(arr)
+        await wait(200)
+
+        await max_heapify(arr, 0, heap_size)
+        heap_size--        
+        
+    }
+
+
+
+}
+
+
+export { bubbleSort, selectionSort, insertionSort, quickSortFunc, heapSort }

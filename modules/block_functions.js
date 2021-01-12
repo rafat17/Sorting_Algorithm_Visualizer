@@ -4,17 +4,6 @@ import { handle_controllers } from './controller.js'
 
 let block_arr = []
 
-function loadBlocks() {
-    block_arr.push(new Block(), new Block(), new Block(), new Block())
-
-    let count = 0
-
-    while (count < block_arr.length) {
-        container.insertAdjacentHTML('beforeend', `<div class="block" id="${count}">${block_arr[count].pos_no}</div>`)
-        count++
-    }
-}
-
 function make_blocks(start, end) {
     block_arr = []
     container.innerHTML = ""
@@ -30,21 +19,21 @@ function rearrange_blocks(arr) {
     let count = 0
 
     while (count < arr.length) {
-        container.insertAdjacentHTML('beforeend', `<div class="block${arr[count].selected ? ' selected': ''}" id="${count}">${arr[count].pos_no}</div>`)
+        container.insertAdjacentHTML('beforeend', `<div class="block${arr[count].selected ? ' selected' : ''}" id="${count}">${arr[count].pos_no}</div>`)
         count++
     }
 
 }
 
 
-function get_blocks(){
+function get_blocks() {
     return block_arr
 }
 
 
-function set_blocks(arr){
-    block_arr = arr
- }
+// function set_blocks(arr) {
+//     block_arr = arr
+// }
 
 
 async function randomize(loop = Math.floor(2 + Math.random() * 4)) {
@@ -58,7 +47,7 @@ async function randomize(loop = Math.floor(2 + Math.random() * 4)) {
         rearrange_blocks(block_arr)
         count++
         await wait(400)
-       
+
     }
 
     console.log(block_arr)
@@ -67,5 +56,5 @@ async function randomize(loop = Math.floor(2 + Math.random() * 4)) {
 
 
 
-export { set_blocks, get_blocks, randomize, loadBlocks, make_blocks, rearrange_blocks }
+export { get_blocks, randomize, make_blocks, rearrange_blocks }
 
