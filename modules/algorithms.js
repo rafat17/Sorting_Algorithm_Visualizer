@@ -1,8 +1,8 @@
 import { wait } from './controller.js'
 import { rearrange_blocks } from './block_functions.js'
-import { partition, build_max_heap, max_heapify } from './sortSubFuncs.js'
+import { partition, build_max_heap, max_heapify, merge_arr } from './sortSubFuncs.js'
 
-async function bubbleSort(blocks) {
+export async function bubbleSort(blocks) {
 
     let swap_counter = -1
     let length = blocks.length
@@ -44,7 +44,7 @@ async function bubbleSort(blocks) {
 }
 
 
-async function selectionSort(blocks) {
+export async function selectionSort(blocks) {
 
     let start = 0
     let min = null;
@@ -93,7 +93,7 @@ async function selectionSort(blocks) {
 
 
 
-async function insertionSort(blocks) {
+export async function insertionSort(blocks) {
     let count = 1
 
     while (count < blocks.length) {
@@ -150,7 +150,7 @@ async function insertionSort(blocks) {
 }
 
 
-async function quickSort(blocks, low, high) {
+export async function quickSort(blocks, low, high) {
     if (low < high) {
         partition(blocks, low, high).then(res => {
             let loc = res
@@ -160,13 +160,8 @@ async function quickSort(blocks, low, high) {
     }
 }
 
-async function quickSortFunc(blocks, low, high) {
-    await quickSort(blocks, low, high)
-    console.log("Inside quiksort !")
-}
 
-
-async function heapSort(arr) {
+export async function heapSort(arr) {
     await build_max_heap(arr)
     var heap_size = arr.length - 1 
 
@@ -192,10 +187,19 @@ async function heapSort(arr) {
         heap_size--        
         
     }
+}
 
 
+export async function mergeSort(arr, start, end){
+
+    if(start < end){
+        let mid = Math.floor((start + end)/2)
+        await mergeSort(arr, start, mid)
+        await mergeSort(arr, mid + 1, end)
+        await merge_arr(arr, start, mid, end)
+    }
 
 }
 
 
-export { bubbleSort, selectionSort, insertionSort, quickSortFunc, heapSort }
+
