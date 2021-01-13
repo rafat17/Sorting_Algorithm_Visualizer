@@ -188,34 +188,16 @@ export async function merge_arr(arr, start, mid, end) {
     var i = start
     var j = mid + 1
 
-
-
     while (i <= mid && j <= end) {
-
-        arr[i].selected = true
-        arr[j].selected = true
-        rearrange_blocks(arr)
-        await wait(200)
 
         if (arr[i].pos_no <= arr[j].pos_no) {
 
             new_arr.push(arr[i].pos_no)
-
-            arr[i].selected = false
-            rearrange_blocks(arr)
-            await wait(200)
             i++
-
-
         }
 
         else {
-
             new_arr.push(arr[j].pos_no)
-
-            arr[j].selected = false
-            rearrange_blocks(arr)
-            await wait(200)
             j++
         }
 
@@ -227,29 +209,16 @@ export async function merge_arr(arr, start, mid, end) {
 
         while (j <= end) {
 
-            arr[j].selected = true
-            rearrange_blocks(arr)
-            await wait(1000)
             new_arr.push(arr[j].pos_no)
-
-            arr[j].selected = false
-            rearrange_blocks(arr)
-            await wait(200)
             j++
         }
     }
 
     else {
+
         while (i <= mid) {
 
-            arr[i].selected = true
-            rearrange_blocks(arr)
-            await wait(200)
             new_arr.push(arr[i].pos_no)
-
-            arr[i].selected = false
-            rearrange_blocks(arr)
-            await wait(200)
             i++
         }
     }
