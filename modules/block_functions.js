@@ -9,7 +9,7 @@ function make_blocks(start, end) {
     container.innerHTML = ""
     while (start < end) {
         block_arr.push(new Block())
-        container.insertAdjacentHTML('beforeend', `<div class="block" id="${start}">${block_arr[start].pos_no}</div>`)
+        container.insertAdjacentHTML('beforeend', `<div class="block" id="${start}" style="height: ${block_arr[start].pos_no}%;">${block_arr[start].pos_no}</div>`)
         start++
     }
 }
@@ -19,7 +19,7 @@ function rearrange_blocks(arr) {
     let count = 0
 
     while (count < arr.length) {
-        container.insertAdjacentHTML('beforeend', `<div class="block${arr[count].selected ? ' selected' : ''}" id="${count}">${arr[count].pos_no}</div>`)
+        container.insertAdjacentHTML('beforeend', `<div class="block${arr[count].selected ? ' selected' : ''}" id="${count}" style="height: ${arr[count].pos_no}%;">${arr[count].pos_no}</div>`)
         count++
     }
 
