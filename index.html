@@ -12,17 +12,23 @@
 </head>
 
 <body>
-  <input type="range" value="4" id="ranger" class="control" min="4" max="35" />
-  <select class="control" name="algorithms" id="algorithms">
-    <option value="Bubble Sort">Bubble Sort</option>
-    <option value="Selection Sort">Selection Sort</option>
-    <option value="Insertion Sort">Insertion Sort</option>
-    <option value="Quick Sort">Quick Sort</option>
-    <option value="Heap Sort">Heap Sort</option>
-  </select>
-  <button class="control custom_btn btn btn-primary">Sort !</button>
-  <div id="container">
+  <div id="options_section">
+    <input type="range" value="4" id="ranger" class="control" min="4" max="40" />
+    <select class="control" name="algorithms" id="algorithms">
+      <option value="Bubble Sort">Bubble Sort</option>
+      <option value="Selection Sort">Selection Sort</option>
+      <option value="Insertion Sort">Insertion Sort</option>
+      <option value="Quick Sort">Quick Sort</option>
+      <option value="Heap Sort">Heap Sort</option>
+      <option value="Merge Sort">Merge Sort</option>
+    </select>
+    <button class="control custom_btn btn btn-primary">Sort !</button>
   </div>
+
+  <section id="container"></section>
+  <footer>
+    Made by Rafatul Alam 
+  </footer>
   <script type="module" src="main.js"></script>
 </body>
 
