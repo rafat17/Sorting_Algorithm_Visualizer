@@ -2,8 +2,6 @@ import { wait } from "./controller.js"
 import { rearrange_blocks } from './block_functions.js'
 import { getWait } from './waitConfig.js'
 
-var time = getWait()
-
 
 //HeapSort sub functions !
 //sub function for quicksort algorithm !
@@ -18,13 +16,13 @@ export async function partition(arr, low, high) {
         arr[end].selected = true
 
         rearrange_blocks(arr)
-        await wait(200)
+        await wait(getWait())
 
         while (arr[start].pos_no <= pivot) {
 
             arr[start].selected = false
             rearrange_blocks(arr)
-            await wait(200)
+            await wait(getWait())
             start++
 
             if (start > arr.length - 1) break
@@ -32,7 +30,7 @@ export async function partition(arr, low, high) {
             else {
                 arr[start].selected = true
                 rearrange_blocks(arr)
-                await wait(200)
+                await wait(getWait())
                 // arr[start].selected = false
             }
         }
@@ -41,7 +39,7 @@ export async function partition(arr, low, high) {
 
             arr[end].selected = false
             rearrange_blocks(arr)
-            await wait(200)
+            await wait(getWait())
             end--
 
             if (end < 0) break
@@ -49,7 +47,7 @@ export async function partition(arr, low, high) {
             else {
                 arr[end].selected = true
                 rearrange_blocks(arr)
-                await wait(200)
+                await wait(getWait())
                 // arr[end].selected = false
             }
         }
@@ -64,13 +62,13 @@ export async function partition(arr, low, high) {
             arr[start].pos_no = temp
 
             rearrange_blocks(arr)
-            await wait(200)
+            await wait(getWait())
 
             arr[start].selected = false
             arr[end].selected = false
 
             rearrange_blocks(arr)
-            await wait(200)
+            await wait(getWait())
         }
 
         else {
@@ -83,20 +81,20 @@ export async function partition(arr, low, high) {
     arr[low].selected = true
     arr[end].selected = true
     rearrange_blocks(arr)
-    await wait(200)
+    await wait(getWait())
 
     var temp = arr[end].pos_no
     arr[end].pos_no = arr[low].pos_no
     arr[low].pos_no = temp
 
     rearrange_blocks(arr)
-    await wait(200)
+    await wait(getWait())
 
     arr[low].selected = false
     arr[end].selected = false
 
     rearrange_blocks(arr)
-    await wait(200)
+    await wait(getWait())
 
     arr[end].pivoted = true
     return end
@@ -118,7 +116,7 @@ export async function max_heapify(arr, idx, heap_s = arr.length) {
     arr[idx].selected = true
 
     rearrange_blocks(arr)
-    await wait(200)
+    await wait(getWait())
 
     if (left < heap_size) {
 
@@ -136,20 +134,20 @@ export async function max_heapify(arr, idx, heap_s = arr.length) {
         arr[largest].selected = true
 
         rearrange_blocks(arr)
-        await wait(200)
+        await wait(getWait())
 
         let temp = arr[largest].pos_no
         arr[largest].pos_no = arr[idx].pos_no
         arr[idx].pos_no = temp
 
         rearrange_blocks(arr)
-        await wait(200)
+        await wait(getWait())
 
         arr[idx].selected = false
         arr[largest].selected = false
 
         rearrange_blocks(arr)
-        await wait(200)
+        await wait(getWait())
         await max_heapify(arr, largest, heap_s)
     }
 
@@ -157,7 +155,7 @@ export async function max_heapify(arr, idx, heap_s = arr.length) {
         arr[idx].selected = false
 
         rearrange_blocks(arr)
-        await wait(200)
+        await wait(getWait())
     }
 
 
@@ -171,12 +169,12 @@ export async function build_max_heap(arr) {
 
     for (var i = start; i > -1; i--) {
         rearrange_blocks(arr)
-        await wait(200)
+        await wait(getWait())
         await max_heapify(arr, i)
     }
 
     rearrange_blocks(arr)
-    await wait(200)
+    await wait(getWait())
 }
 
 
@@ -227,20 +225,20 @@ export async function merge_arr(arr, start, mid, end) {
 
         arr[start + m].selected = true
         rearrange_blocks(arr)
-        await wait(200)
+        await wait(getWait())
 
         arr[start + m].pos_no = new_arr[m]
         rearrange_blocks(arr)
-        await wait(200)
+        await wait(getWait())
 
         arr[start + m].selected = false
         rearrange_blocks(arr)
-        await wait(200)
+        await wait(getWait())
 
     }
 
     rearrange_blocks(arr)
-    await wait(200)
+    await wait(getWait())
 
 }
 

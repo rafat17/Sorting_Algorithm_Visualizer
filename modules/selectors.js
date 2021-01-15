@@ -1,5 +1,7 @@
-let container = document.getElementById('container')
-let algorithm_selected = document.getElementById('algorithms')
-let control_inputs = document.querySelectorAll('.control')
+var ranger = document.getElementById('ranger')
+var speed = document.getElementById('speed')
+var container = document.getElementById('container')
+var algorithm_selected = document.getElementById('algorithms')
+var control_inputs = document.querySelectorAll('.control')
 
-export { container, algorithm_selected, control_inputs }
+export { speed, ranger, container, algorithm_selected, control_inputs }

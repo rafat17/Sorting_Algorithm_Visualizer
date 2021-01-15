@@ -1,5 +1,6 @@
-var wait = 200
+import { speed } from './selectors.js'
 
+var wait = Math.abs(parseInt(speed.value))
 
 export function getWait(){
     return wait 
