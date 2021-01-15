@@ -3,21 +3,36 @@
   margin: 0;
 }
 
-body{ height: 100vh; }
+body{ 
+  height: 100vh;
+  background: #F6F8FF; 
+}
 
 #options_section{
   height: 100px;
   padding: 10px 0px 15px 0px;
 }
 
+.nav_content{
+  display: inline;
+  padding: 0px 10px;
+}
+
+input{
+  position: relative;
+  top: 4.5%;
+}
+
 #container{
     position: relative;
-    top: 6.75px;
+    top: 4.5%;
     height: calc(90vh - 100px);
     display: flex;
     /* flex-wrap: nowrap; */
     justify-content: center;
     align-items: flex-end;
+    overflow: auto;
+    padding: 0% 20%;
   }
   
   .custom_btn{
@@ -30,30 +45,90 @@ body{ height: 100vh; }
     position: relative;
     display: flex;
     font-family: sans-serif;
+    background: #226ce0;
+    color: white;
     font-size: clamp(.8rem, 25vw, 1rem);
     font-weight: bold;
     justify-content: center;
     align-items: center;
-    min-width: 2rem;
-    min-height: 30px;
+    min-width: .75%;
+    min-height: 20px;
     border: 1px solid black;
     border-top-left-radius: .5rem;
     border-top-right-radius: .5rem;
-    margin: .4rem .4rem;
+    margin: .3rem .2rem;
     /* border-radius: .6rem; */
-    box-shadow: 4px -3px #ccc;
+    padding: .3% .3%;
+    /* box-shadow: 4px -3px #ccc; */
     transition: background .4s ease-out, color .2s ease-out;
   }
   
   .selected{
-      background: linear-gradient(to top, #4e9816, #57a818);
+      background: #A846A0;
       color: #fff;
   }
 
-  footer{
-    text-align: center;
-    height: 80px;
-    padding: 22px 10px;
-    font-size: 1.25rem;
-    border-top: 5px solid purple;
+  .remove_text{
+    text-indent: -9999px;
   }
+
+  footer{
+    position: absolute;
+    width: 100%;
+    background: #272d2d;
+    color: #fff;
+    text-align: center;
+    padding: 12px 10px;
+    font-size: 1.25rem;
+    border-top: 3px solid #A846A0;
+    bottom: 0;
+  }
+
+
+  /* Media queries */
+
+  @media (max-width: 1600px){
+    #container{
+      padding: 0% 25%;
+    }
+    .block{
+      text-indent: -9999px;
+      min-width: 1%;
+    }
+  }
+
+  @media (max-width: 1320px){
+    #container{
+      padding: 0% 30%;
+    }
+
+    .block{
+      padding: .15% .15%;
+    }
+  }
+
+  @media (max-width: 1100px){
+    #container{
+      padding: 0% 40%;
+    }
+
+    .block{
+      min-width: 2%;
+      margin: .3rem .1rem;
+      padding: 1px;
+    }
+  }
+
+  @media (max-width: 750px){
+    #container{
+      padding: 0% 50%;
+    }
+
+    .block{
+      padding: .15% .15%;
+    }
+  }
+
+
+
+
