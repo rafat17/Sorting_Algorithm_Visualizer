@@ -61,20 +61,29 @@ export async function selectionSort(blocks) {
         rearrange_blocks(blocks)
         await wait(getWait())
 
+        // blocks[start].selected = false
+
         for (let i = start + 1; i < blocks.length; i++) {
 
+            blocks[i].selected = true
+            rearrange_blocks(blocks)
+            await wait(getWait()) 
+
+            blocks[i].selected = false
+
             if (min > blocks[i].pos_no) {
-                blocks[min_index].selected = false
+                // blocks[min_index].selected = false
                 min = blocks[i].pos_no
                 min_index = i
-                blocks[min_index].selected = true
-                rearrange_blocks(blocks)
-                await wait(getWait())
+                // blocks[min_index].selected = true
+                // rearrange_blocks(blocks)
+                // await wait(getWait())
             }
         }
 
 
-        blocks[start].selected = true
+        // blocks[start].selected = true
+        blocks[min_index].selected = true 
         rearrange_blocks(blocks)
         await wait(getWait())
 
