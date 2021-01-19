@@ -1,7 +1,9 @@
-var ranger = document.getElementById('ranger')
-var speed = document.getElementById('speed')
-var container = document.getElementById('container')
-var algorithm_selected = document.getElementById('algorithms')
-var control_inputs = document.querySelectorAll('.control')
+export var ranger = document.getElementById('ranger')
+export var speed = document.getElementById('speed')
+export var container = document.getElementById('container')
+export var selected = document.querySelector('.selected')
+export var control_inputs = document.querySelectorAll('.control')
+export var options_container = document.querySelector('.options-container')
+export var options = document.querySelectorAll('.option')
+export var sort_btn = document.querySelector('.custom_btn')
 
-export { speed, ranger, container, algorithm_selected, control_inputs }
