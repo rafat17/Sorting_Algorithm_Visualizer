@@ -8,21 +8,46 @@
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <title></title>
-
 </head>
-
 <body>
   <div id="options_section">
-    <input type="range" value="4" id="ranger" class="control" min="4" max="40" />
-    <select class="control" name="algorithms" id="algorithms">
-      <option value="Bubble Sort">Bubble Sort</option>
-      <option value="Selection Sort">Selection Sort</option>
-      <option value="Insertion Sort">Insertion Sort</option>
-      <option value="Quick Sort">Quick Sort</option>
-      <option value="Heap Sort">Heap Sort</option>
-      <option value="Merge Sort">Merge Sort</option>
-    </select>
-    <button class="control custom_btn btn btn-primary">Sort !</button>
+    <div class="nav_content">Blocks: </div><input type="range" value="20" id="ranger" class="control_input control" min="10" max="100" />
+    <div class="nav_content">Speed: </div> <input type="range" value="-100" id="speed" class="control_input control" min="-150" max="-25" step="5" />
+    <div class="nav_content">Sorting Algorithm</div>
+    <div class="select-container">
+      <div class="select-box">
+        <div class="options-container">
+          <div class="option">
+            <input type="radio" class="radio" id="heap_sort" name="algorithm_option" />
+            <label for="heap_sort">Heap Sort</label>
+          </div>
+          <div class="option">
+            <input type="radio" class="radio" id="quick_sort" name="algorithm_option" />
+            <label for="quick_sort">Quick Sort</label>
+          </div>
+          <div class="option">
+            <input type="radio" class="radio" id="merge_sort" name="algorithm_option" />
+            <label for="merge_sort">Merge Sort</label>
+          </div>
+          <div class="option">
+            <input type="radio" class="radio" id="bubble_sort" name="algorithm_option" />
+            <label for="bubble_sort">Bubble Sort</label>
+          </div>
+          <div class="option">
+            <input type="radio" class="radio" id="selection_sort" name="algorithm_option" />
+            <label for="selection_sort">Selection Sort</label>
+          </div>
+          <div class="option">
+            <input type="radio" class="radio" id="insertion_sort" name="algorithm_option" />
+            <label for="insertion_sort">Insertion Sort</label>
+          </div>        
+        </div>
+        <div class="selected">
+          Bubble Sort
+        </div>
+      </div>
+    </div>
+    <button class="control custom_btn btn">Sort !</button>
   </div>
 
   <section id="container"></section>
