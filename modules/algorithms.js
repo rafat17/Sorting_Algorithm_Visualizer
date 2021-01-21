@@ -61,8 +61,6 @@ export async function selectionSort(blocks) {
         rearrange_blocks(blocks)
         await wait(getWait())
 
-        // blocks[start].selected = false
-
         for (let i = start + 1; i < blocks.length; i++) {
 
             blocks[i].selected = true
@@ -169,6 +167,8 @@ export async function quickSort(blocks, low, high) {
             quickSort(blocks, loc + 1, high)
         })
     }
+
+    if(low == high) blocks[low].pivoted = true
 }
 
 
@@ -208,6 +208,11 @@ export async function mergeSort(arr, start, end){
         await mergeSort(arr, start, mid)
         await mergeSort(arr, mid + 1, end)
         await merge_arr(arr, start, mid, end)
+
+        if(start == 0 && end == arr.length - 1){
+            arr.forEach(curr => curr.sorted = true)
+        }
+        
     }
 
 }

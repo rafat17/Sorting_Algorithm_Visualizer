@@ -232,8 +232,6 @@ export async function merge_arr(arr, start, mid, end) {
         await wait(getWait())
 
         arr[start + m].selected = false
-        // rearrange_blocks(arr)
-        // await wait(getWait())
 
     }
 

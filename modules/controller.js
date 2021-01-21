@@ -8,7 +8,6 @@ export function handle_slideStyle(el){
     
     else{
 
-        console.log("Hey !")
         let denom = Math.abs(parseInt(el.max) - parseInt(el.min))
         let value = Math.abs(parseInt(el.value) - parseInt(el.min))
         let percent = Math.floor((value/denom)*100) 

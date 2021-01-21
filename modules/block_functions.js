@@ -11,7 +11,7 @@ export function make_blocks(end) {
     while (start < end) {
         block_arr.push(new Block())
         container.insertAdjacentHTML('beforeend', 
-        `<div class="block${block_arr[start].selected ? ' selected': ''}${!block_arr[start].num_disp ? ' remove_text': ''}" 
+        `<div class="block${block_arr[start].selected ? ' selected_block': ''}${!block_arr[start].num_disp ? ' remove_text': ''}" 
         id="${start}" style="height: ${block_arr[start].pos_no}%;">${block_arr[start].pos_no}</div>`)
         start++
     }
@@ -23,7 +23,7 @@ export function rearrange_blocks(arr) {
 
     while (count < arr.length) {
         container.insertAdjacentHTML('beforeend', 
-        `<div class="block${arr[count].selected ? ' selected' : ''}${!arr[count].num_disp ? ' remove_text' : ''}" 
+        `<div class="block${arr[count].selected ? ' selected_block' : ''}${!arr[count].num_disp ? ' remove_text' : ''}" 
         id="${count}" style="height: ${arr[count].pos_no}%;">${arr[count].pos_no}</div>`)
         count++
     }
@@ -45,6 +45,7 @@ export async function randomize(loop = Math.floor(2 + Math.random() * 4)) {
     let count = 0
     while (count < loop) {
         block_arr = block_arr.sort(() => Math.random() - 0.5)
+        block_arr.map(curr => curr.pivoted = false)
         rearrange_blocks(block_arr)
         count++
         await wait(400)
