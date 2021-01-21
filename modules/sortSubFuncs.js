@@ -10,6 +10,8 @@ export async function partition(arr, low, high) {
     var start = low
     var end = high
 
+    arr[low].pivoted = true
+
     while (start < end) {
 
         arr[start].selected = true
@@ -31,7 +33,6 @@ export async function partition(arr, low, high) {
                 arr[start].selected = true
                 rearrange_blocks(arr)
                 await wait(getWait())
-                // arr[start].selected = false
             }
         }
 
@@ -48,7 +49,6 @@ export async function partition(arr, low, high) {
                 arr[end].selected = true
                 rearrange_blocks(arr)
                 await wait(getWait())
-                // arr[end].selected = false
             }
         }
 
@@ -78,7 +78,6 @@ export async function partition(arr, low, high) {
     }
 
 
-    arr[low].selected = true
     arr[end].selected = true
     rearrange_blocks(arr)
     await wait(getWait())
@@ -90,13 +89,14 @@ export async function partition(arr, low, high) {
     rearrange_blocks(arr)
     await wait(getWait())
 
-    arr[low].selected = false
+    arr[low].pivoted = false
+
     arr[end].selected = false
+    arr[end].sorted = true
 
     rearrange_blocks(arr)
     await wait(getWait())
 
-    arr[end].pivoted = true
     return end
 
 }
@@ -231,8 +231,22 @@ export async function merge_arr(arr, start, mid, end) {
         rearrange_blocks(arr)
         await wait(getWait())
 
-        arr[start + m].selected = false
+    }
 
+    rearrange_blocks(arr)
+    await wait(getWait())
+
+    for (let m = 0; m < new_arr.length; m++) {
+        arr[start + m].selected = false 
+        arr[start + m].sorted = true 
+    }
+
+    rearrange_blocks(arr)
+    await wait(getWait())
+    await wait(getWait())
+
+    for (let m = 0; m < new_arr.length; m++) {
+        arr[start + m].sorted = false 
     }
 
     rearrange_blocks(arr)

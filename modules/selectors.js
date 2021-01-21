@@ -1,5 +1,6 @@
 export var ranger = document.getElementById('ranger')
 export var speed = document.getElementById('speed')
+export var button  = document.querySelector('.custom_btn')
 export var container = document.getElementById('container')
 export var selected = document.querySelector('.selected')
 export var control_inputs = document.querySelectorAll('.control')

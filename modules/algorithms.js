@@ -4,6 +4,8 @@ import { partition, build_max_heap, max_heapify, merge_arr } from './sortSubFunc
 
 import { getWait } from './waitConfig.js'
 
+
+// bubble sort main function !
 export async function bubbleSort(blocks) {
 
     let swap_counter = -1
@@ -38,14 +40,21 @@ export async function bubbleSort(blocks) {
 
         }
 
+        blocks[count].sorted = true
+        rearrange_blocks(blocks)
+        await wait(getWait()) 
+
         length -= 1
     }
 
+    blocks.map(curr => curr.sorted = true)
     rearrange_blocks(blocks)
+    await wait(getWait())
 
 }
 
 
+//selection sort main function !
 export async function selectionSort(blocks) {
 
     let start = 0
@@ -70,17 +79,11 @@ export async function selectionSort(blocks) {
             blocks[i].selected = false
 
             if (min > blocks[i].pos_no) {
-                // blocks[min_index].selected = false
                 min = blocks[i].pos_no
                 min_index = i
-                // blocks[min_index].selected = true
-                // rearrange_blocks(blocks)
-                // await wait(getWait())
             }
         }
 
-
-        // blocks[start].selected = true
         blocks[min_index].selected = true 
         rearrange_blocks(blocks)
         await wait(getWait())
@@ -91,17 +94,26 @@ export async function selectionSort(blocks) {
 
         rearrange_blocks(blocks)
         await wait(getWait())
+
+        blocks[start].sorted = true 
         blocks[start].selected = false
         blocks[min_index].selected = false
+
+        rearrange_blocks(blocks)
+        await wait(getWait())
         start += 1
 
     }
 
+    blocks[start].sorted = true 
     rearrange_blocks(blocks)
+    await wait(getWait())
 }
 
 
 
+
+//insertion sort main function
 export async function insertionSort(blocks) {
     let count = 1
 
@@ -146,9 +158,11 @@ export async function insertionSort(blocks) {
         let end = blocks.slice(count - shift)
 
         blocks = [...start, val, ...end]
+        val.sorted = true 
         rearrange_blocks(blocks)
         await wait(getWait())
 
+        val.sorted = false
         val.selected = false
         count++
 
@@ -168,10 +182,16 @@ export async function quickSort(blocks, low, high) {
         })
     }
 
-    if(low == high) blocks[low].pivoted = true
+    if(low == high) { 
+        blocks[low].sorted = true
+        rearrange_blocks(blocks)
+        await wait(getWait())
+    }
 }
 
 
+
+//heapSort main function !
 export async function heapSort(arr) {
     await build_max_heap(arr)
     var heap_size = arr.length - 1 
@@ -191,6 +211,7 @@ export async function heapSort(arr) {
 
         arr[i].selected = false
         arr[0].selected = false
+        arr[i].sorted = true
         rearrange_blocks(arr)
         await wait(getWait())
 
@@ -201,6 +222,8 @@ export async function heapSort(arr) {
 }
 
 
+
+//heapSort main function !
 export async function mergeSort(arr, start, end){
 
     if(start < end){
