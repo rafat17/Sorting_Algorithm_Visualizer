@@ -3,7 +3,6 @@ import { rearrange_blocks } from './block_functions.js'
 import { getWait } from './waitConfig.js'
 
 
-//HeapSort sub functions !
 //sub function for quicksort algorithm !
 export async function partition(arr, low, high) {
     var pivot = arr[low].pos_no

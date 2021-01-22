@@ -1,3 +1,4 @@
+//Block object through which each block is created !
 class Block{
     constructor(){
       this.pos_no = Math.floor(Math.random() * 100)

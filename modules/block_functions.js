@@ -55,6 +55,7 @@ export async function randomize(loop = Math.floor(2 + Math.random() * 4)) {
 
 }
 
+// BLOCK RESIZING FUNCTIONS ! 
 
 // associated with blocks resizing and formatting !
 export function remod_blocks(){

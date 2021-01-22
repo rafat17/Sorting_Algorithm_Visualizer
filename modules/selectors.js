@@ -1,3 +1,4 @@
+//the element selectors used for DOM manipulation !
 export var ranger = document.getElementById('ranger')
 export var speed = document.getElementById('speed')
 export var button  = document.querySelector('.custom_btn')

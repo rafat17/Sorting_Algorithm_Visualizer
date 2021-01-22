@@ -173,6 +173,7 @@ export async function insertionSort(blocks) {
 }
 
 
+//quicksort main function !
 export async function quickSort(blocks, low, high) {
     if (low < high) {
         partition(blocks, low, high).then(res => {
@@ -223,7 +224,7 @@ export async function heapSort(arr) {
 
 
 
-//heapSort main function !
+//mergeSort main function !
 export async function mergeSort(arr, start, end){
 
     if(start < end){
