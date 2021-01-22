@@ -35,9 +35,6 @@ body{
   border-radius: 10px;
 }
 
-/* #ranger{ background: linear-gradient(90deg, #A846A0 20%, #226ce0 20%); } */
-/* #speed{ background: linear-gradient(90deg, #A846A0 66%, #226ce0 66%); } */
-
 .control_input:hover{ opacity: 1; }
 
 .control_input::-webkit-slider-thumb{
@@ -174,7 +171,6 @@ body{
     border-top-right-radius: .5rem;
     margin: .3rem .2rem;
     padding: .3% .3%;
-    /* transition: background .4s ease-out, color .2s ease-out; */
   }
   
   .selected_block{
