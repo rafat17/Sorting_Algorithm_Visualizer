@@ -1,10 +1,3 @@
-//object the hold the current sorting state true/false
-//sets the selected algorithm that the user decides as input !
-var p_objs = {
-    sorted: false,
-    selected_algorithm: 'Bubble Sort'
-}
-
 import * as selector from './modules/selectors.js'
 import { get_blocks, make_blocks, remod_blocks, rearrange_blocks, randomize } from './modules/block_functions.js'
 import { handle_controllers, handle_slideStyle } from './modules/controller.js'
@@ -15,10 +8,18 @@ import { setWait } from './modules/waitConfig.js'
 
 //IIFE code to initialize default input setup !
 (() => {
-    handle_slideStyle(ranger)
-    handle_slideStyle(speed) 
+    handle_slideStyle(selector.ranger)
+    handle_slideStyle(selector.speed) 
     make_blocks(20)
 })()
+
+
+//object to hold the current sorting state true/false
+//sets the selected algorithm that the user decides as input !
+var p_objs = {
+    sorted: false,
+    selected_algorithm: 'Bubble Sort'
+}
 
 
 //function to select the appropriate main function
@@ -116,8 +117,8 @@ async function sort_blocks(selected_algorithm) {
 
 //resets inputs on browser back press to this page !
 window.addEventListener('pageshow', function () {
-    ranger.value = '20'
-    speed.value = '-100'
+    selector.ranger.value = '20'
+    selector.speed.value = '-50'
     p_objs.selected_algorithm = 'Bubble Sort'
     selector.selected.innerHTML = p_objs.selected_algorithm
 })
