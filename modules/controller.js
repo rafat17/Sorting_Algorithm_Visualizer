@@ -6,6 +6,7 @@ export function handle_slideStyle(el){
 
 
     if(el.id == 'ranger') el.style.background = `linear-gradient(90deg, #A846A0 ${el.value}%, #226ce0 ${el.value}%)`
+
     
     else{
 
@@ -13,6 +14,7 @@ export function handle_slideStyle(el){
         let value = Math.abs(parseInt(el.value) - parseInt(el.min))
         let percent = Math.floor((value/denom)*100)
         
+        console.log(el.value)
         console.log(percent)
 
         el.style.background = `linear-gradient(90deg, #A846A0 ${percent}%, #226ce0 ${percent}%)`
@@ -22,8 +24,19 @@ export function handle_slideStyle(el){
 
 //enables/disables the inputs based on the event whether or not the sorting is going on !
 export function handle_controllers(disable_it) {
-    disable_it ? control_inputs.forEach(curr => curr.setAttribute('disabled', disable_it))
-        : control_inputs.forEach(curr => curr.removeAttribute('disabled'))
+    if(disable_it){ 
+        control_inputs.forEach(curr => { 
+            curr.setAttribute('disabled', disable_it)
+            curr.classList.add('blur')
+        })
+    }
+
+    else{ 
+            control_inputs.forEach(curr => { 
+                curr.removeAttribute('disabled')
+                curr.classList.remove('blur')
+            })    
+    }
 }
 
 export function wait(time) {
