@@ -51,6 +51,9 @@ body{
   outline: none;
 }
 
+#ranger{background: linear-gradient(90deg, #A846A0 20%, #226ce0 20%); }
+#speed{background: linear-gradient(90deg, #A846A0 90%, #226ce0 90%);}
+
 .control_input::after{
   content: '';
     position: absolute;
