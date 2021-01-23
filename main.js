@@ -9,7 +9,7 @@ import { setWait } from './modules/waitConfig.js'
 //IIFE code to initialize default input setup !
 (() => {
     handle_slideStyle(selector.ranger)
-    handle_slideStyle(selector.speed) 
+    handle_slideStyle(selector.speed)
     make_blocks(20)
 })()
 
@@ -53,7 +53,7 @@ async function algorithm_selected_fn(algorithm) {
 
 
 //this function start sort the blocks once the "Sort" button get clicked !
-//temporarily disabled the inputs while the sorting process goes on !
+//temporarily disables the inputs while the sorting process goes on !
 async function sort_blocks(selected_algorithm) {
 
     var blocks = get_blocks()
@@ -66,12 +66,12 @@ async function sort_blocks(selected_algorithm) {
 
         algorithm_selected_fn(selected_algorithm)
             .then(() => {
-                
+
                 blocks.map(curr => curr.sorted = false)
-                if(selected_algorithm !== 'Insertion Sort') rearrange_blocks(blocks)
-                
+                if (selected_algorithm !== 'Insertion Sort') rearrange_blocks(blocks)
+
                 handle_controllers(false)
-                p_objs.sorted = true 
+                p_objs.sorted = true
             })
     }
 
@@ -91,7 +91,7 @@ async function sort_blocks(selected_algorithm) {
                     handle_controllers(false)
                     clearInterval(timer)
                 }
-            }, 1000);
+            }, 1200);
         }
 
         if (selected_algorithm == "Merge Sort") {
@@ -104,7 +104,7 @@ async function sort_blocks(selected_algorithm) {
                     handle_controllers(false)
                     clearInterval(timer)
                 }
-            }, 1000);
+            }, 1200);
         }
 
     }
@@ -113,7 +113,7 @@ async function sort_blocks(selected_algorithm) {
 
 
 
-// WINDOW EVENTS 
+// WINDOW EVENT
 
 //resets inputs on browser back press to this page !
 window.addEventListener('pageshow', function () {
@@ -122,15 +122,6 @@ window.addEventListener('pageshow', function () {
     p_objs.selected_algorithm = 'Bubble Sort'
     selector.selected.innerHTML = p_objs.selected_algorithm
 })
-
-
-//collapses the algorithm select section
-//if clicked outside the select algorithm region it collapses !
-window.onclick = function(e){
-    if(e.target.classList.value !== 'selected'){
-        selector.options_container.classList.remove('active')
-    }
-}
 
 
 
@@ -168,8 +159,10 @@ selector.button.addEventListener('click', () => {
     sort_blocks(p_objs.selected_algorithm)
 })
 
+
 //expands the select algorithm section on clicking over it !
-selector.selected.addEventListener('click', () => selector.options_container.classList.toggle('active'))
+selector.selected.addEventListener('mouseover', () => selector.options_container.classList.add('active'))
+selector.selected.addEventListener('mouseout', () => selector.options_container.classList.remove('active'))
 
 
 //adds event listener of click to each option inside the select algorithm section
@@ -180,7 +173,12 @@ selector.options.forEach(opt => {
         selector.options_container.classList.remove('active')
         p_objs.selected_algorithm = selector.selected.innerHTML
     })
+
+    opt.addEventListener('mouseover', () => selector.options_container.classList.add('active'))
+    opt.addEventListener('mouseout', () => selector.options_container.classList.remove('active'))
 })
+
+
 
 
 
