@@ -5,22 +5,37 @@
 
 body{ 
   height: 100vh;
-  background: #F6F8FF; 
+  background: #F6F8FF;
+  color:  #F6F8FF;
+}
+
+#options_section, #inputs_container{
+  position: relative;
+  height: 90px;
+  background:  #272d2d;
+  padding: 25px 20px 15px 20px;
+}
+
+#inputs_container{
+  display: inline;
 }
 
 #options_section{
-  position: relative;
-  height: 100px;
-  padding: 10px 0px 15px 0px;
+  border-bottom: 3px solid #A846A0;
 }
+
 
 .option{
   z-index: -10;
 }
 
 .nav_content{
+  position: relative;
   display: inline;
+  top: 2px;
   padding: 0px 10px;
+  margin-left: 10px;
+  text-transform: uppercase;
 }
 
 .control_input{
@@ -29,11 +44,26 @@ body{
   appearance: none;
   width: 10vw;
   height: 9px;
-  outline: none;
   opacity: .9;
   transition: opacity .2s;
+  margin-right: 20px;
   border-radius: 10px;
+  outline: none;
 }
+
+.control_input::after{
+  content: '';
+    position: absolute;
+    width: 2.5px;
+    height: 31px;
+    background:#A846A0;
+    bottom: -10px;
+    right: 2px;
+    margin: -8px -20px 0 0;
+    border-radius: 20%;
+}
+
+.blur{ opacity: 0.5; }
 
 .control_input:hover{ opacity: 1; }
 
@@ -51,12 +81,13 @@ body{
 .select-container{
   position: relative;
   display: inline-block;
+  top: 1px;
   z-index: 10;
 }
 
 .select-box{
   display: flex;
-  width: 11vw;
+  width: 8vw;
   min-width: 150px;
   flex-direction: column;
 }
@@ -74,7 +105,7 @@ body{
 }
 
 .select-box .options-container.active{
-  max-height: 125px;
+  max-height: 160px;
   opacity: 1;
   overflow-y: scroll;
 }
@@ -92,7 +123,12 @@ body{
 
 .select-box .option
 {
-  padding: 0px 5px;
+  padding: 5px;
+  height: 40px;
+  font-size: 16.75px;
+  padding-right: 15px;
+  text-align: center;
+  transition: background 0.1s ease-out;
   cursor: pointer;
 }
 
@@ -110,48 +146,71 @@ body{
 
 .select-box .options-container.active + .selected::after{
   transform: rotateX(180deg);
-  top: -6px;
+  top: -8px;
 }
 
 .selected{
   position: relative;
-  padding: 0px 5px;
-  cursor: pointer;
-  background: #272d2d;
   color: #f5f6fa;
+  height: 30px;
+  font-size: 16.75px;
+  padding-right: 15px;
+  text-align: center;
   border-radius: 8px 8px 0 0;
-
+  transition: background 0.2s ease-out;
+  cursor: pointer;
 }
 
+.selected:hover{
+  background: #1f2424;
+}
 
 .selected::after{
   content: "";
-  background: url('imgs/down.png') no-repeat;
+  background: url('imgs/down3.png') no-repeat;
   background-size: contain;
   position: absolute;
   height: 100%;
-  width: 17px;
-  top: 7px;
-  right: 7px;
+  width: 18px;
+  top: 5px;
+  right: 15px;
   transition: 0.2s;
 }
 
 #container{
-    position: relative;
-    top: 4.5%;
-    height: calc(90vh - 100px);
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    overflow: auto;
-    padding: 0% 20%;
-  }
+  position: relative;
+  top: 5.5%;
+  height: calc(90vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: auto;
+  padding: 0% 20%;
+}
   
   .custom_btn{
     position: absolute;
-    right: 0.25rem;
-    top: .5rem;
+    top: .9rem;
+    right: 2.25rem;
+    width: 9.5rem;
+    height: 2.75rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background:  #226ce0;
+    border-radius: 30px;
+    transition: background .2s ease-out, color .2s ease-out;
     cursor: pointer;
+    outline: none;
+    border: none;
+    box-shadow: none;
+  }
+
+
+  .custom_btn:hover{
+    color: white;
+    background: #A846A0;
   }
   
   .block{
@@ -191,12 +250,45 @@ body{
     background: #272d2d;
     color: #fff;
     text-align: center;
-    padding: 12px 10px;
-    font-size: 1.25rem;
+    padding: 15px 10px;
     border-top: 3px solid #A846A0;
     bottom: 0;
   }
 
+  #credit{
+    width: 25rem;
+    text-align: start;
+    padding: 0 10px;
+    font-size: 1.025rem;
+    letter-spacing: .3px;  
+  }
+
+  #credit i{
+    color: #CC2836;
+    font-size: 1.6rem;
+    vertical-align: top;
+  }
+
+  #source_code{
+    position: absolute;
+    font-size: 1.025rem;
+    top: 9px;
+    right: 2.25rem;
+  }
+
+  #source_code a{
+    vertical-align: middle;
+    font-size: 2.25rem;
+    padding-left: 20px;
+    margin-bottom: 0px;
+    text-decoration: none;
+    color: #F6F8FF;
+    transition: color .2s ease-out;
+  }
+
+  #source_code a:hover{
+    color:#b96bb3;
+  }
 
   /* Media queries */
 
