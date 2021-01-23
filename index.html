@@ -6,13 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="style.css">
   <title></title>
 </head>
+
 <body>
   <div id="options_section">
-    <div class="nav_content">Blocks: </div><input type="range" value="20" id="ranger" class="control_input control" min="10" max="100" />
-    <div class="nav_content">Speed: </div> <input type="range" value="-50" id="speed" class="control_input control" min="-440" max="-10" step="10" />
+    <div id="inputs_container">
+      <div class="nav_content">Blocks </div><input type="range" value="20" id="ranger" class="control_input control"
+        min="10" max="100" />
+      <div class="nav_content">Speed </div> <input type="range" value="-50" id="speed" class="control_input control"
+        min="-400" max="-10" step="10" />
+    </div>
     <div class="nav_content">Sorting Algorithm</div>
     <div class="select-container">
       <div class="select-box">
@@ -40,7 +47,7 @@
           <div class="option">
             <input type="radio" class="radio" id="insertion_sort" name="algorithm_option" />
             <label for="insertion_sort">Insertion Sort</label>
-          </div>        
+          </div>
         </div>
         <div class="selected">
           Bubble Sort
@@ -52,7 +59,8 @@
 
   <section id="container"></section>
   <footer>
-    Made by Rafatul Alam 
+    <div id="credit">Crafted with <i class="material-icons">favorite</i> by Rafatul Alam</div>
+    <div id="source_code">Source Code  <a href="https://github.com/rafat17/Sorting_Algorithm_Visualizer" target="_blank" class="fa fa-github"></a></div>
   </footer>
   <script type="module" src="main.js"></script>
 </body>
