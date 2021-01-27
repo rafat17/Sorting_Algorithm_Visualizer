@@ -14,13 +14,16 @@
 
 <body>
   <div id="options_section">
-    <div id="inputs_container">
-      <div class="nav_content">Blocks </div><input type="range" value="20" id="ranger" class="control_input control"
-        min="10" max="100" />
-      <div class="nav_content">Speed </div> <input type="range" value="-50" id="speed" class="control_input control"
-        min="-400" max="-10" step="10" />
+    <div class="inputs_container">
+      <button id="cross-btn"></button>
+      <div class="input_heading nav_content">Blocks </div>
+      <input type="range" value="20" id="ranger" class="control_input control" min="10" max="100" />
+      <div id="breaker"></div>
+      <div class="input_heading nav_content">Speed </div> 
+      <input type="range" value="-50" id="speed" class="control_input control" min="-400" max="-10" step="10" />
     </div>
-    <div class="nav_content">Sorting Algorithm</div>
+    <button id="hbg-btn"></button>
+    <div class="nav_content sorting-heading">Sorting Algorithm</div>
     <div class="select-container">
       <div class="select-box">
         <div class="options-container">
