@@ -124,6 +124,24 @@ window.addEventListener('pageshow', function () {
 })
 
 
+//checks whether we trigger the input container display from the hamburger menu button !
+window.addEventListener('click', e => {
+    if (selector.inputs_container.classList.contains('show')) {
+        if (e.target.parentElement.classList.contains('inputs_container')) return
+        else if (e.target.classList.contains('inputs_container')) return
+        else {
+            selector.inputs_container.style.transition = '0.4s'
+            selector.inputs_container.classList.remove('show')
+            setTimeout(() => selector.inputs_container.style.transition = 'none', 400)
+        }
+    }
+
+    if (e.target.id == 'hbg-btn') {
+        selector.inputs_container.style.transition = '0.4s'
+        selector.inputs_container.classList.add('show')
+    }
+})
+
 
 // INPUT EVENTS
 
@@ -156,6 +174,7 @@ selector.speed.addEventListener('change', function () {
 selector.button.addEventListener('click', () => {
 
     selector.options_container.classList.remove('active')
+    selector.inputs_container.classList.remove('show')
     sort_blocks(p_objs.selected_algorithm)
 })
 
@@ -177,6 +196,17 @@ selector.options.forEach(opt => {
     opt.addEventListener('mouseover', () => selector.options_container.classList.add('active'))
     opt.addEventListener('mouseout', () => selector.options_container.classList.remove('active'))
 })
+
+
+//closes the input container menu on clicking the close icon button !
+selector.cross_btn.addEventListener('click', () => {
+    selector.inputs_container.style.transition = '0.4s'
+    selector.inputs_container.classList.remove('show')
+    setTimeout(() => selector.inputs_container.style.transition = 'none', 400)
+})
+
+
+
 
 
 
