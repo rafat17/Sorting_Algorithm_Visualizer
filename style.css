@@ -9,15 +9,16 @@ body{
   color:  #F6F8FF;
 }
 
-#options_section, #inputs_container{
+#options_section, .inputs_container{
   position: relative;
   height: 90px;
   background:  #272d2d;
   padding: 25px 20px 15px 20px;
 }
 
-#inputs_container{
+.inputs_container{
   display: inline;
+  /* transition: 0.4s; */
 }
 
 #options_section{
@@ -51,20 +52,22 @@ body{
   outline: none;
 }
 
-#ranger{background: linear-gradient(90deg, #A846A0 20%, #226ce0 20%); }
+#ranger{background: linear-gradient(90deg, #A846A0 17%, #226ce0 22%); }
 #speed{background: linear-gradient(90deg, #A846A0 90%, #226ce0 90%);}
 
 .control_input::after{
   content: '';
-    position: absolute;
-    width: 2.5px;
-    height: 31px;
-    background:#A846A0;
-    bottom: -10px;
-    right: 2px;
-    margin: -8px -20px 0 0;
-    border-radius: 20%;
+  position: absolute;
+  width: 2.5px;
+  height: 31px;
+  background:#A846A0;
+  bottom: -10px;
+  right: 2px;
+  margin: -8px -20px 0 0;
+  border-radius: 20%;
 }
+
+#breaker{ display: none; }
 
 .blur{ opacity: 0.5; }
 
@@ -81,11 +84,41 @@ body{
   cursor: pointer;
 }
 
+
 .select-container{
   position: relative;
   display: inline-block;
   top: 1px;
   z-index: 10;
+}
+
+
+#hbg-btn, #cross-btn{
+  display: none;
+  outline: none;
+  border: none;
+  transition: opacity 0.3s ease-out;
+}
+
+#hbg-btn{
+  width: 40px;
+  height: 40px;
+  background: url('./imgs/hbg.png') no-repeat;
+  background-size: cover;
+  top: 0px;
+  margin: -4px 5px 4px 5px;
+}
+
+#cross-btn{
+  width: 30px;
+  height: 30px;
+  background: url('./imgs/close.png') no-repeat;
+  background-size: cover;
+}
+
+#hbg-btn:hover,
+#cross-btn:hover{
+  opacity: .8;
 }
 
 .select-box{
@@ -259,7 +292,7 @@ body{
   }
 
   #credit{
-    width: 25rem;
+    width: 17rem;
     text-align: start;
     padding: 0 10px;
     font-size: 1.025rem;
@@ -299,44 +332,155 @@ body{
     #container{
       padding: 0% 25%;
     }
+    
     .block{
       text-indent: -9999px;
-      min-width: 1%;
     }
   }
 
   @media (max-width: 1320px){
-    #container{
-      padding: 0% 30%;
-    }
 
     .block{
       padding: .15% .15%;
     }
   }
 
+
   @media (max-width: 1100px){
     #container{
-      padding: 0% 40%;
+      padding: 0% 38%;
     }
 
     .block{
-      min-width: 2%;
+      min-width: 2.25%;
       margin: .3rem .1rem;
       padding: 1px;
     }
   }
 
-  @media (max-width: 750px){
-    #container{
-      padding: 0% 50%;
+
+  @media (max-width: 1050px){
+    
+    .inputs_container{
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 420px;
+      z-index: 100;
+      transform: translateX(-100%);
     }
 
+    .show{ transform: translateX(0%); }
+
+    .input_heading{
+      display: block;
+      width: 90%;
+      top: 0;
+      font-size: 1.22rem;
+      text-align: center;
+      margin: 30px 0 30px 0;
+    }
+
+    #hbg-btn{ display: inline; }
+    #cross-btn{ 
+      display: block;
+      position: absolute;
+      top: 10px;
+      right: 15px; 
+      margin-bottom: 30px;
+    }
+
+    .sorting-heading, .select-container{ top: -16px; }
+
+    .control_input{ 
+      top: 0;
+      width: 90%; 
+    }
+
+    #breaker{
+      display: block;
+      padding: 10px 0; 
+    }
+    
+    .control_input::after{
+      display: none;
+    }
+  }
+
+
+  @media (max-width: 730px){
     .block{
       padding: .15% .15%;
     }
   }
 
 
+  @media (max-width: 620px){
+    .block{
+      min-width: 2.1%;
+    }
+
+    .sorting-heading{
+      display: none;
+    }
+  }
 
 
+@media (max-width: 570px){ 
+  .block{
+    min-width: 1.8%;
+  }
+
+  #credit, #source_code{
+    font-size: .9rem;
+  }
+}
+
+
+@media (max-width: 450px){
+  .custom_btn{
+    width: 8rem;
+    height: 2.5rem;
+    font-size: .9rem;
+    top: 1.05rem;
+    right: 1.25rem;
+  }
+
+  .inputs_container{ width: 100%; }
+
+  .input_heading, .control_input{
+    width: 100%;
+  }
+
+  #credit{ font-size: .8rem; }
+
+  #source_code{
+    right: 1rem;
+    font-size: .8rem;
+  }
+
+  #source_code a{ padding-left: 5px; }
+}
+
+
+@media (max-width: 375px){
+  .custom_btn{
+    width: 5.5rem;
+    font-size: .8rem;
+  }
+
+  .sorting-heading, .select-container{
+    right: 7px;
+  }
+}
+
+
+@media (max-width: 360px){
+  #source_code{ display: none; }
+  #credit{
+    width: 100%;
+    text-align: center;
+  }
+}
