@@ -5,7 +5,7 @@ import { control_inputs } from './selectors.js'
 export function handle_slideStyle(el){
 
 
-    if(el.id == 'ranger') el.style.background = `linear-gradient(90deg, #A846A0 ${el.value}%, #226ce0 ${el.value}%)`
+    if(el.id == 'ranger') el.style.background = `linear-gradient(90deg, #A846A0 ${el.value - 5}%, #226ce0 ${el.value}%)`
 
     
     else{
