@@ -12,7 +12,6 @@ A web application that helps you to visualize and understand the renowned sortin
 - ES6 (Promises/Async Await)
 
 ## Features
-- Sorting Algorithms selection
 - Range input to select the number of blocks to sort from 1 to 100 at max
 - Range input to determine the animation speed at which the blocks will sort out from min delay of 400ms to max delay of 10ms
 - Numbers are randomly picked for each block element from between 0 to 99 inclusive
