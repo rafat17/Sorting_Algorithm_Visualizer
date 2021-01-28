@@ -25,18 +25,18 @@ A web application that helps you to visualize and understand the renowned sortin
 2. Bubble Sort Visualization
 <img title="Landing" src="https://github.com/rafat17/Sorting_Algorithm_Visualizer/blob/master/imgs/bubble.png" width="100%">
 
-2. Heap Sort Visualization
+3. Heap Sort Visualization
 <img title="Landing" src="https://github.com/rafat17/Sorting_Algorithm_Visualizer/blob/master/imgs/heap.png" width="100%">
 
-2. Quick Sort Visualization
+4. Quick Sort Visualization
 <img title="Landing" src="https://github.com/rafat17/Sorting_Algorithm_Visualizer/blob/master/imgs/quick.png" width="100%">
 
-2. Merge Sort Visualization
+5. Merge Sort Visualization
 <img title="Landing" src="https://github.com/rafat17/Sorting_Algorithm_Visualizer/blob/master/imgs/merge.png" width="100%">
 
-3. Selection Sort Visualization
+6. Selection Sort Visualization
 <img title="Landing" src="https://github.com/rafat17/Sorting_Algorithm_Visualizer/blob/master/imgs/selection.png" width="100%">
 
-4. Insertion Sort Visualization
+7. Insertion Sort Visualization
 <img title="Landing" src="https://github.com/rafat17/Sorting_Algorithm_Visualizer/blob/master/imgs/insertion.png" width="100%">
 
