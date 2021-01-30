@@ -3,11 +3,6 @@
 ## Overview 
 A web application that helps you to visualize and understand the renowned sorting algorithms
 
-## N.B**
-This project is a work in progress as a part of my personal portfolio
-Only 3 algorithms have been implemented in this web app for now keeping the basic design minimalistic !
-I plan to deploy this project sooner once I implement a few other sorting algorithms that can run visually
-
 
 ## Technology Stack used
 - HTML
@@ -17,9 +12,10 @@ I plan to deploy this project sooner once I implement a few other sorting algori
 - ES6 (Promises/Async Await)
 
 ## Features
-- Sorting Algorithms selection
-- Range input to select the number of blocks to sort from 1 to 40 at max 
-- Numbers are randomly picked for each block element from 0 to 100
+- Range input to select the number of blocks to sort from 1 to 100 at max
+- Range input to determine the animation speed at which the blocks will sort out from min delay of 400ms to max delay of 10ms
+- Numbers are randomly picked for each block element from between 0 to 99 inclusive
+- Dropdown menu to select any of the 6 sorting algorithms 
 
 ## Screenshots
 
@@ -29,9 +25,18 @@ I plan to deploy this project sooner once I implement a few other sorting algori
 2. Bubble Sort Visualization
 <img title="Landing" src="https://github.com/rafat17/Sorting_Algorithm_Visualizer/blob/master/imgs/bubble.png" width="100%">
 
-3. Selection Sort Visualization
+3. Heap Sort Visualization
+<img title="Landing" src="https://github.com/rafat17/Sorting_Algorithm_Visualizer/blob/master/imgs/heap.png" width="100%">
+
+4. Quick Sort Visualization
+<img title="Landing" src="https://github.com/rafat17/Sorting_Algorithm_Visualizer/blob/master/imgs/quick.png" width="100%">
+
+5. Merge Sort Visualization
+<img title="Landing" src="https://github.com/rafat17/Sorting_Algorithm_Visualizer/blob/master/imgs/merge.png" width="100%">
+
+6. Selection Sort Visualization
 <img title="Landing" src="https://github.com/rafat17/Sorting_Algorithm_Visualizer/blob/master/imgs/selection.png" width="100%">
 
-4. Insertion Sort Visualization
+7. Insertion Sort Visualization
 <img title="Landing" src="https://github.com/rafat17/Sorting_Algorithm_Visualizer/blob/master/imgs/insertion.png" width="100%">
 
