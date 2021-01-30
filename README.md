@@ -15,7 +15,11 @@ A web application that helps you to visualize and understand the renowned sortin
 - Range input to select the number of blocks to sort from 1 to 100 at max
 - Range input to determine the animation speed at which the blocks will sort out from min delay of 400ms to max delay of 10ms
 - Numbers are randomly picked for each block element from between 0 to 99 inclusive
-- Dropdown menu to select any of the 6 sorting algorithms 
+- Dropdown menu to select any of the 6 sorting algorithms
+
+## Video Presentation
+
+<video src="https://github.com/rafat17/Sorting_Algorithm_Visualizer/blob/master/video/demo.mp4" width="100%"></video>
 
 ## Screenshots
 
