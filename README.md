@@ -17,9 +17,6 @@ A web application that helps you to visualize and understand the renowned sortin
 - Numbers are randomly picked for each block element from between 0 to 99 inclusive
 - Dropdown menu to select any of the 6 sorting algorithms
 
-## Video Presentation
-
-<video src="https://github.com/rafat17/Sorting_Algorithm_Visualizer/blob/master/video/demo.mp4" width="100%"></video>
 
 ## Screenshots
 
